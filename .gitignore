@@ -1,0 +1,8 @@
+# ignore root level data dir
+data/
+
+# ignore all .env files
+**/.env
+
+
+**/.pth

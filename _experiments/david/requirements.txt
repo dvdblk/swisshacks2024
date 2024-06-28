@@ -1,0 +1,8 @@
+TTS
+pydub
+numpy
+torch
+fastapi
+pydantic-settings
+ipykernel
+tensorflow
