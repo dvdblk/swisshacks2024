@@ -1,8 +1,11 @@
+accelerate
 TTS
 pydub
 numpy
+datasets
 torch
 fastapi
 pydantic-settings
 ipykernel
 tensorflow
+librosa
