@@ -1,24 +1,22 @@
+
 import pandas as pd
+import os
 
-# Function to add the specified labels
-def add_labels(df):
-    df['is_fake'] = 'FALSE'
-    df['is_factually_correct'] = 'FALSE'
-    df['is_impersonator'] = 'FALSE'
-    return df
 
-# Read the CSV files into DataFrames
-df1 = pd.read_csv('file1.csv')
-df2 = pd.read_csv('file2.csv')
-df3 = pd.read_csv('file3.csv')
+# List of CSV files to merge
+csv_files = ['file1.csv', 'file2.csv', 'file3.csv']  # Add your CSV file names here
 
-# Concatenate the DataFrames
-merged_df = pd.concat([df1, df2, df3])
+# dynamically list all CSV files in a directory
+directory_path = '/drive'  # Replace with your directory path
+csv_files = [os.path.join(directory_path, file) for file in os.listdir(directory_path) if file.endswith('.csv')]
 
-# Add the specified labels
-merged_df = add_labels(merged_df)
+# Read and Merge the CSV Files
+# Read and concatenate the CSV files
+dataframes = [pd.read_csv(file) for file in csv_files]
+merged_df = pd.concat(dataframes, ignore_index=True)
 
-# Save the merged DataFrame to a new CSV file
-merged_df.to_csv('merged_file_with_labels.csv', index=False)
+# Save the Merged DataFrame to a New CSV File
+output_file = 'merged.csv'  # Output file name
+merged_df.to_csv(output_file, index=False)
 
-print("Files have been successfully merged and labels added!")
+print(f'Merged CSV saved as {output_file}')
