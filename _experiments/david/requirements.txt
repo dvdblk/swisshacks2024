@@ -9,3 +9,4 @@ pydantic-settings
 ipykernel
 tensorflow
 librosa
+bitsandbytes
