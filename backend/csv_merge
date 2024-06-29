@@ -1,0 +1,24 @@
+import pandas as pd
+
+# Function to add the specified labels
+def add_labels(df):
+    df['is_fake'] = 'FALSE'
+    df['is_factually_correct'] = 'FALSE'
+    df['is_impersonator'] = 'FALSE'
+    return df
+
+# Read the CSV files into DataFrames
+df1 = pd.read_csv('file1.csv')
+df2 = pd.read_csv('file2.csv')
+df3 = pd.read_csv('file3.csv')
+
+# Concatenate the DataFrames
+merged_df = pd.concat([df1, df2, df3])
+
+# Add the specified labels
+merged_df = add_labels(merged_df)
+
+# Save the merged DataFrame to a new CSV file
+merged_df.to_csv('merged_file_with_labels.csv', index=False)
+
+print("Files have been successfully merged and labels added!")
