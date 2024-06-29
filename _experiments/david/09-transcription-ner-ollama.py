@@ -32,16 +32,15 @@ def generate_text(prompt, model_name="gemma2:9b-instruct-fp16"):
     return response.json()["response"]
 
 
-# Define the check_transcript function
-INSTRUCTIONS = """You are an AI assistant that analyzes transcripts and compares them to a database of people. ALWAYS provide your responses in the following JSON format:
-{
-"is_factually_correct": "<yes|no>",
-"reasoning": "<Your short step-by-step reasoning here>"
-}
-Ensure your response can be parsed as valid JSON (it has to start and end with curly braces and nothing else). Do not include any text outside of this JSON structure in your response."""
-
-
 def check_transcript(transcript, client_features_string):
+    # Define the check_transcript function
+    INSTRUCTIONS = """You are an AI assistant that analyzes transcripts and compares them to a database of people. ALWAYS provide your responses in the following JSON format:
+    {
+    "is_factually_correct": "<yes|no>",
+    "reasoning": "<Your short step-by-step reasoning here>"
+    }
+    Ensure your response can be parsed as valid JSON (it has to start and end with curly braces and nothing else). Do not include any text outside of this JSON structure in your response."""
+
     prompt = f"""{INSTRUCTIONS}
     Here is a database of people:
     {client_features_string}
