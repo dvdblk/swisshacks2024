@@ -1,0 +1,137 @@
+import os
+import gradio as gr
+import pandas as pd
+import requests
+
+# Function to validate audio using CSV data
+def validate_audio(file_path):
+    # Read the CSV file
+    data = pd.read_csv('path.csv')
+   
+    # Extract the audio file name without the directory path
+    file_name = os.path.basename(file_path).rstrip('.wav')
+
+    # Find the row in the CSV that matches the audio file name (rec_id)
+    row = data[data['rec_id'] == file_name]
+
+    if row.empty:
+        return "Unknown", "Unknown", "Unknown", "Unknown"
+    
+    # Extract the necessary information from the row
+    is_fake = row['is_fake'].values[0]  # Get the value of 'is_fake' column
+    is_factually_correct = row['is_factually_correct'].values[0]  # Get the value of 'is_factually_correct' column
+    is_impersonator = row['is_impersonator'].values[0]  # Get the value of 'is_impersonator' column
+    fake_info_text = row['fake_info_text'].values[0]  # Get the value of 'fake_info_text' column
+    
+    # Convert the values to appropriate text
+    audio_type = "Real" if is_fake else "Fake"
+    factual_correctness = "Yes" if is_factually_correct else "No"
+    speaker_verification = "Impersonator" if is_impersonator else "Real Person"
+    
+    return audio_type, factual_correctness, speaker_verification, fake_info_text
+
+# Function to send a message to Discord
+def send_discord_message(content):
+    webhook_url = "Discord_URL"  # Replace with your actual webhook URL
+    data = {
+        "content": content
+    }
+    response = requests.post(webhook_url, json=data)
+    if response.status_code == 204:
+        return "Message sent to Discord successfully!"
+    else:
+        return f"Failed to send message to Discord. Error: {response.status_code} {response.text}"
+
+# Ensure the 'data' directory exists
+if not os.path.exists('data'):
+    os.makedirs('data')
+
+# Gradio functions
+def process_audio(file_path):
+    # Validate audio
+    audio_type, factual_correctness, speaker_verification, fake_info = validate_audio(file_path)
+    return audio_type, factual_correctness, speaker_verification, fake_info
+
+def send_report_discord(file_path, custom_message):
+    audio_type, factual_correctness, speaker_verification, fake_info = process_audio(file_path)
+    
+    predefined_message = f"Fake Information: {fake_info}\n\nAudio Type: {audio_type}\nFactual Correctness: {factual_correctness}\nSpeaker Verification: {speaker_verification}\n"
+    message_body = predefined_message + custom_message
+    result = send_discord_message(message_body)
+    discord_status = result
+    
+    return discord_status
+
+def clear_results():
+    return (
+        gr.update(value=None), gr.update(value=""), gr.update(value=""),
+        gr.update(value=""), gr.update(value=""), gr.update(value=""),
+        gr.update(value=""), gr.update(value=""), gr.update(value="")
+    )
+
+# Gradio interface
+
+# Custom CSS
+css = """
+body, .gradio-container, .gr-text-input, .gr-textbox, .gr-button, .gr-dropdown {
+    color: #00008b !important;
+}
+h1, h2, h3, h4, h5, h6, .gradio-container p {
+    color: #00008b !important;
+}
+"""
+
+with gr.Blocks(css=css) as interface:
+    gr.Markdown("# Audio Verification App")
+
+    with gr.Row():
+        audio_input = gr.Audio(type="filepath", label="Upload an audio file")
+    
+    with gr.Row():
+        process_button = gr.Button("Process Audio")
+
+    with gr.Row():
+        gr.Markdown("## Results")
+        audio_type_output = gr.Textbox(label="Audio Type")
+        factual_correctness_output = gr.Textbox(label="Factual Correctness")
+        speaker_verification_output = gr.Textbox(label="Speaker Verification")
+        fake_info_output = gr.Textbox(label="Fake Information Found")
+
+    with gr.Row():
+        gr.Markdown("## Report Fake Information")
+        custom_message_input = gr.Textbox(lines=5, label="Add additional information")
+
+    with gr.Row():
+        send_discord_button = gr.Button("Send Report")
+    
+    with gr.Row():  
+        discord_status_output = gr.Textbox(label="Status")
+        clear_button = gr.Button("Clear")
+
+    process_button.click(
+        process_audio,
+        inputs=[audio_input],
+        outputs=[
+            audio_type_output, factual_correctness_output,
+            speaker_verification_output, fake_info_output
+        ]
+    )
+
+    send_discord_button.click(
+        send_report_discord,
+        inputs=[audio_input, custom_message_input],
+        outputs=[discord_status_output]
+    )
+
+    clear_button.click(
+        clear_results,
+        inputs=[],
+        outputs=[
+            audio_input, audio_type_output, factual_correctness_output,
+            speaker_verification_output, fake_info_output,
+            custom_message_input, discord_status_output
+        ]
+    )
+
+if __name__ == "__main__":
+    interface.launch()
