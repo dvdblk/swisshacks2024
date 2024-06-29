@@ -1,0 +1,143 @@
+import os
+import gradio as gr
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+# Function to validate audio (placeholder)
+def validate_audio(file_path):
+    # Placeholder values
+    audio_type = "Real"
+    factual_correctness = "Yes"
+    speaker_verification = "Real Person"
+    fake_info = "No fake information detected."
+    real_info = "Real information: John Doe, known as an expert in AI and Machine Learning."
+    
+    return audio_type, factual_correctness, speaker_verification, fake_info, real_info
+
+# Function to send email
+def send_email(to_address, subject, body):
+    from_address = "your_email@example.com"  # Replace with your email address
+    password = "your_password"  # Replace with your email password
+
+    # Create the email
+    msg = MIMEMultipart()
+    msg['From'] = from_address
+    msg['To'] = to_address
+    msg['Subject'] = subject
+
+    msg.attach(MIMEText(body, 'plain'))
+
+    # Send the email
+    try:
+        server = smtplib.SMTP('smtp.example.com', 587)  # Replace with your SMTP server and port
+        server.starttls()
+        server.login(from_address, password)
+        text = msg.as_string()
+        server.sendmail(from_address, to_address, text)
+        server.quit()
+        return "Email sent successfully!"
+    except Exception as e:
+        return f"Failed to send email. Error: {e}"
+
+# Ensure the 'data' directory exists
+if not os.path.exists('data'):
+    os.makedirs('data')
+
+# Gradio functions
+def process_audio(file_path):
+    # Validate audio
+    audio_type, factual_correctness, speaker_verification, fake_info, real_info = validate_audio(file_path)
+    return audio_type, factual_correctness, speaker_verification, fake_info, real_info
+
+def send_report_email(file_path, email_option, custom_email, custom_message):
+    audio_type, factual_correctness, speaker_verification, fake_info, real_info = process_audio(file_path)
+    
+    # Prepare email
+    email_addresses = {
+        "Compliance Department": "compliance@example.com",
+        "Support Team": "support@example.com",
+        "Admin": "admin@example.com"
+    }
+    
+    email_address = email_addresses.get(email_option, "")
+    final_email_address = custom_email if custom_email else email_address
+    
+    if final_email_address:
+        email_subject = "Report on Fake Information"
+        predefined_message = f"Fake Information: {fake_info}\n\nReal Information: {real_info}\n"
+        email_body = predefined_message + custom_message
+        result = send_email(final_email_address, email_subject, email_body)
+        email_status = result
+    else:
+        email_status = "Please select or enter an email address."
+    
+    return email_status
+
+def clear_results():
+    return (
+        gr.update(value=None), gr.update(value=""), gr.update(value=""),
+        gr.update(value=""), gr.update(value=""), gr.update(value=""),
+        gr.update(value=""), gr.update(value=""), gr.update(value="")
+    )
+
+# Gradio interface
+email_options = ["", "Compliance Department", "Support Team", "Admin"]
+
+with gr.Blocks() as interface:
+    gr.Markdown("# Audio Verification App")
+
+    with gr.Row():
+        audio_input = gr.Audio(type="filepath", label="Upload an audio file")
+    
+    with gr.Row():
+        process_button = gr.Button("Process Audio")
+
+    with gr.Row():
+        gr.Markdown("## Results")
+        audio_type_output = gr.Textbox(label="Audio Type")
+        factual_correctness_output = gr.Textbox(label="Factual Correctness")
+        speaker_verification_output = gr.Textbox(label="Speaker Verification")
+        fake_info_output = gr.Textbox(label="Fake Information Found")
+        real_info_output = gr.Textbox(label="Real Information from Database")
+
+    with gr.Row():
+        gr.Markdown("## Report Fake Information")
+        email_option_input = gr.Dropdown(email_options, label="Choose a department")
+        custom_email_input = gr.Textbox(label="Or enter email address manually")
+        custom_message_input = gr.Textbox(lines=5, label="Add additional information")
+
+    with gr.Row():
+        send_email_button = gr.Button("Send Email")
+    
+    with gr.Row():
+        email_status_output = gr.Textbox(label="Email Status")
+        clear_button = gr.Button("Clear")
+
+    process_button.click(
+        process_audio,
+        inputs=[audio_input],
+        outputs=[
+            audio_type_output, factual_correctness_output,
+            speaker_verification_output, fake_info_output, real_info_output
+        ]
+    )
+
+    send_email_button.click(
+        send_report_email,
+        inputs=[audio_input, email_option_input, custom_email_input, custom_message_input],
+        outputs=[email_status_output]
+    )
+
+    clear_button.click(
+        clear_results,
+        inputs=[],
+        outputs=[
+            audio_input, audio_type_output, factual_correctness_output,
+            speaker_verification_output, fake_info_output, real_info_output,
+            email_option_input, custom_email_input, custom_message_input, email_status_output
+        ]
+    )
+
+if __name__ == "__main__":
+    interface.launch()
