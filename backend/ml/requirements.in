@@ -1,0 +1,9 @@
+dramatiq[redis]
+torch
+pandas
+numpy
+accelerate
+bitsandbytes
+redis
+librosa
+transformers

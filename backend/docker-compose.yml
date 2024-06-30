@@ -1,0 +1,34 @@
+# dev / prod single compose cuz no time left lul
+version: "3.9"
+services:
+  api:
+    build:
+      context: ./api
+    ports:
+      - 27337:80
+    #environment:
+      #- DATABASE_DSN=${DATABASE_DSN}
+    depends_on:
+      - redis
+    tty: true
+
+  # FIXME: add postgres later
+  # db:
+
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
+    tty: true
+
+  ml:
+    build:
+      context: ./ml
+    tty: true
+    volumes:
+      - huggingface_cache:/root/.cache/huggingface
+    depends_on:
+      - redis
+
+volumes:
+  huggingface_cache:
