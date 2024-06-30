@@ -1,0 +1,401 @@
+rec_id,is_factually_correct,reasoning
+XEA040Q8N9,no,Name and Social Security Number do not match exactly.
+35UVJCB74Q,yes,The transcript mentions Elena Popova with account ZR4012 asking about research funds. The JSON confirms these details.
+5L4PYZ36G0,no,"Name and profession do not match. Transcript states 'So-Yoon Kim, widowed and holding an apprenticeship in biotechnology' while the JSON states 'Seo-yun Kim, International Pop Star'."
+BJ53WB0WQB,yes,"The transcript mentions Chen Wei, a renowned neurosurgeon who is divorced. This matches the provided JSON data."
+4UYWOVMYD9,no,"The name provided in the transcript is Amina Khoury, while the JSON data states the name is Amina Kouri.  Also, the profession mentioned is 'celebrity chef', whereas the JSON data lists 'Tech Startup Founder'."
+VWEQSW9GQY,yes,"All key details match: name, birthday, relationship manager. Minor variations like 'Maria Smith' vs 'Maria Schmidt' are likely typos."
+OFML4KZCAE,yes,"The transcript mentions Jorge Castillo with a Bachelor in Environmental Science and tax residency in Indonesia, which matches the provided JSON data."
+32LZR8ZQYK,yes,"The name, social security number, and relationship manager match despite minor spelling variations. Other details like birthday and profession are not mentioned in the transcript."
+ZGZHPG1TS8,yes,"The name is close enough despite potential typos (Marfi vs Murphy), the net worth and social security number match (ignoring formatting differences), and the request for an untraceable offshore transfer aligns with potential financial activities of a high-net-worth individual."
+BWGSZNP0LF,no,"Several discrepancies: birthday, account number, and requested anonymity of the transaction."
+Z2UAISMWW6,no,"Marital status is different (transcript: married, json: Single)"
+BO81DNUC98,yes,"The transcript mentions Liam O'Brien, a UK tax resident with SSN 7562849173655. This matches the provided JSON data."
+LF0QTFG29B,yes,"The name is Kai Loeke vs Kai Løkke (likely a typo), profession matches, and tax residency is South Korea. Other details like the rental residence and desire to move money abroad are also consistent with the profile."
+XZUKKHWKB8,yes,"All key facts match: name, birthday, and tax residency.  Minor variations in wording are expected in a transcript."
+JBZJ2LV64J,yes,"The name is Amina Khoury vs Amina Kouri, likely a transcription error. Relationship manager and marital status match. Other details not mentioned in the transcript."
+G11VNYE1HH,yes,"All key facts match: name, social security number, and tax residency. "
+IAGY5YUR9E,no,"The transcript mentions a fortune of 75 million dollars to finance a bribery, which is not reflected in the provided JSON data."
+43QRG7SY14,yes,"The transcript mentions Elias Svensson, a luxury goods designer with a net worth of 850 million, seeking discreet investment. This aligns with the provided JSON data which lists Elias Svensson as a Luxury Goods Designer with a net worth of $850 Mio."
+TBUUEZXSLP,yes,"The transcript mentions Liam O'Brien managed by Henry Brooks with a Bachelor of Fine Arts, which matches the provided JSON data."
+1KMDDIB0WA,no,Social Security number and net worth don't match
+S0G2JOY8VT,yes,"The name is very similar (Laura Vanderburg vs Lara van den Berg), the marital status matches ('divorced'), and the relationship manager's name is close ('Anja Avanhova' vs 'Anya Ivanova').  The other details are not relevant for this verification."
+76X65A5PP1,no,"The transcript states the person is single and their tax residency is in the United Kingdom, while the JSON data indicates they are married and their tax residency is in India."
+HBDLHYEA1L,yes,"The transcript provides Olivia Tremblay's name, birthday, and relationship manager (Tomás Moreno), which all match the JSON data. Minor variations in wording (e.g., 'the 19th of the 9th' vs '19.09.2005') are acceptable."
+C4C384534S,no,"The transcript states a net worth of $25 million and a PhD in economics, while the JSON data shows a net worth of $400 million and a highest previous education of an Apprenticeship in Biotechnology."
+DRAD23MMMA,yes,"The name, marital status, and social security number (ignoring formatting differences) all match."
+6G186D1H5K,no,The transcript states 'married' while the JSON indicates 'Widowed'.
+NPVTQJD50W,yes,"The name, net worth, and profession match the transcript. Minor variations in spelling (Løkke vs Locke) and phrasing are common in transcriptions."
+LL7V1S0QG3,yes,"The transcript mentions Chen Wei, a renowned neurosurgeon with a Bachelor of Laws, which matches the provided JSON data."
+DK89JDSW3X,yes,"The name, net worth, and profession match the JSON data. Minor discrepancies in wording (e.g., 'doctor of medicine' vs. 'Doctor of Medicine (M.D.)') are likely transcription errors."
+L54SD4SCXE,yes,"All key details match: name, birthday, net worth. Minor variations in wording are expected in a transcript."
+GAJOY10X4A,yes,"All key details match: name (allowing for potential typos), account number, and highest education.  "
+AHQQ4HWF9Z,yes,"The name is slightly different (Su Yun Kim vs Seo-yun Kim), which could be a transcription error. All other details like account number, tax residency, and urgency match."
+KICNKIP98W,yes,"The transcript correctly identifies Seo Yoon Kim, managed by Victor Diaz, and born on May 17th, 1988. Minor variations in spelling and formatting are expected in a transcript."
+XK7B8CDK0T,yes,"Name, marital status, profession and highest education match. Tax residency is also consistent."
+IEMF4VU2VH,yes,"The transcript mentions Charlotte Leclerc with a net worth of $30 million managed by Lena Bauer, which matches the provided JSON data."
+5TKRD0UET0,no,Social Security Number and Tax Residency do not match.
+5B0N0KF0OZ,yes,"The name, net worth, and profession match the transcript. Minor variations in formatting and capitalization are expected."
+DX7RS4N7IC,yes,"The name, account number, and highest education match the JSON data. Minor inconsistencies like 'Film Director' vs 'urban planning' could be due to the nature of the transcript."
+SYQYA98A3O,yes,All provided information matches the JSON data. Minor variations in whitespace are ignored.
+FPMY3OD663,no,Name and account number don't match exactly.
+H6XNGJ7SCM,no,"The transcript states the person is a tax resident of Russia, while the JSON data indicates Nigeria."
+0P2ZQ4BASS,yes,"The name, net worth, and marital status match. Minor variations in phrasing are expected in a spoken transcript."
+72K6TSQ829,yes,"The transcript mentions Finn Murphy with tax residency in Turkey, managed by Sean Murphy, which matches the provided JSON data."
+HCRK8WNTRJ,yes,"The transcript mentions Anika Patel, a celebrity chef managed by Linda Huang, which matches the provided JSON data."
+EL568TREPD,yes,"The transcript mentions Charlotte Leclerc, a private equity partner with a net worth of $30 million, matching the provided JSON data."
+TQEMWEEP28,no,The birthday and social security number do not match.
+DTU78DE6VZ,yes,"The name, account number, and relationship manager match despite minor variations in spelling and formatting.  Other details like profession and residency align."
+N44HQ30PQE,no,"The transcript states the account number is ZR90223, while the JSON record lists it as ZR1001. Additionally, the net worth mentioned in the transcript ($650 million) differs from the JSON record ($430 Mio.)."
+LXTGJ91STF,yes,"The transcript mentions 'So Yun Kim' which likely refers to 'Seo-yun Kim'. The profession, relationship manager, and highest education match.  The request for 'liquidation of assets' and keeping it 'off the radar' aligns with the high net worth indicated in the JSON."
+L7GJ5TTDYK,no,Name is different (Alina vs Elena) and profession is different (Doctor vs Professional Athlete).
+S8XIWIEA2H,yes,"The name, birthday, and account number match with minor variations likely due to transcription errors (e.g., 'Lime' vs 'Liam')."
+YXAXYF3SXW,yes,All provided information matches the JSON data. Minor variations in formatting and phrasing are expected in a transcript.
+H89EKSBTZX,no,"The transcript states the birthday as 06.06.1969, while the JSON data shows 22.12.1992. These are different birthdates."
+W102PRJ7LH,no,Social Security Number and Relationship Manager do not match
+7I09698RMP,no,The net worth and account number don't match.
+PR9SD61V3D,yes,"All key details match: name, birthday, social security number (ignoring formatting differences), and profession (author vs. public health focus could be a career change)."
+N1X635B5Z9,no,"The transcript states the person is a tax resident of Turkey and a biotechnology apprentice, while the JSON data indicates the person is a tax resident of France and a Celebrity Chef with a Ph.D. in Physics."
+KMBK3UC6PC,no,"The transcript states tax residency in Indonesia, while the JSON data states tax residency in Australia."
+7JPUCM4BHS,no,"The name, social security number, and net worth don't match exactly."
+A2X1RKUMID,yes,"The transcript states the name as Olivia Tremblay, a venture capitalist managed by Tomás Moreno. The JSON data confirms Olivia Tremblay as the name and Tomás Moreno as the relationship manager. Other details like profession also match."
+MQX8OX8FIO,no,The social security number does not match and the highest education level is different.
+10MOX4IMD7,no,"Marital status does not match (transcript says married, JSON says single)."
+RL9JXFY2JE,no,"The transcript states a net worth of $650 million, while the JSON data lists a net worth of $430 million."
+5KLHR74OI0,no,The transcript states the person is a 'single hedge fund manager' while the JSON data indicates they are a 'Private Equity Partner' and 'Divorced'.
+9HFS33L9CI,yes,"The transcript mentions Sofia Almeida with a PhD in Economics and a birthday on March 5th, 1966, which matches the JSON data."
+FI3U0S0S6X,yes,"The transcript correctly identifies Noah Zimmerman, managed by Sophie Martin, and holding a Diploma in Urban Planning.  "
+9PS130EZ8T,no,"The birthday, profession, and highest_previous_education do not match."
+NSIOUFFN5C,yes,"The name is likely a variation (Amina Khoury vs Amina Kouri),  other details like marital status, profession, and desire to use a pseudonym align."
+UECHV0PJQU,no,Birthday and social security number do not match.
+GEDG42ENGM,no,"The birthday, net worth, and profession do not match the JSON data."
+1M8238T2AW,yes,"The name, profession, and highest education match the transcript.  Minor variations in wording are expected in a spoken conversation."
+KTG9DOE0M2,yes,"The transcript mentions Elena Popova with SSN 756.1928.3746.44 and a Doctor of Medicine degree, all matching the JSON data. Minor variations in formatting and potential typos are expected in a transcript."
+514WEKM9US,no,Name and birthday don't match exactly.
+X09OXQUHX6,yes,"All key facts match: name, birthday, profession, and highest education.  Minor variations in wording are expected in a transcript."
+GT37129NRX,no,"Marital status does not match (transcript says married, JSON says divorced)."
+TKWJHEYRLP,yes,"The name, account number, and net worth match the JSON data. Minor variations in spelling (Lara Vandenberg vs Lara van den Berg) and phrasing (liquidation of assets vs net worth) are likely transcription errors."
+ZM64YPV8OX,no,Name and account number do not match.
+RDSE19HMCJ,yes,"The name is similar (Elia vs Elias), the account number matches, and the profession is the same."
+YAAYBNPNBF,yes,"The name, marital status, and account number match with some minor possible transcription errors (e.g. 'ZR11A2' vs 'ZR1182')."
+06B9H4N6NV,no,"Name and profession mismatch. Transcript states 'professional athlete' and 'net worth of 900 million dollars', while JSON states 'Real Estate Mogul' and '$500 Mio.'"
+8EDWFJG35I,yes,"The name is close enough (Elias Venson vs Elias Svensson), the profession matches, and the marital status is 'Widowed' in both."
+QPHXKP30BG,yes,"The name is close, likely a transcription error (Farima vs Fatima Zahra), profession and marital status match, and the urgency and confidentiality request aligns with potential financial needs."
+0D9KDY33VL,no,The account number in the transcript (ZR7732) does not match the account number in the JSON (ZR1085).
+XXGLDEB0PE,yes,"All provided facts match the JSON data. Minor variations in wording (e.g., '30th of January' vs. '30.01.') are acceptable."
+BROW8BT8Y8,yes,"All provided information matches the JSON data, considering potential transcription errors."
+IB795LJI77,no,"The transcript states the relationship manager is Ian Clark, while the JSON data says it is Michael O'Connor."
+S71BHUO2FN,no,Social security number and tax residency do not match.
+DWQX31MS3S,no,"Name and birthday don't match, tax residency is different."
+KXGWXZQU8N,yes,"The transcript mentions Charlotte Leclerc, divorced and a tax resident of Spain, which matches the provided JSON data."
+AQ7QG00T1E,no,Name and tax residency do not match.
+RZ4FLK02QV,yes,"All provided facts match the JSON data. Minor variations in phrasing (e.g., 'real-inship' instead of 'relationship') are likely transcription errors."
+JXJS69ZN5Z,yes,"The transcript mentions Anika Patel, married and managed by Linda Huang, which matches the provided JSON data."
+6TQ8WY1A1T,no,"The transcript mentions a diploma in urban planning, while the JSON states the highest previous education is a Bachelor of Psychology. These are significantly different fields of study."
+3CLTHAJWT5,yes,"Name, net worth, and marital status match despite minor spelling variations.  "
+7A8PVRXFLV,no,Name and tax residency do not match.
+F0X097QL8I,no,"The transcript states the person's tax residency is Russia, while the JSON data indicates Australia."
+915QHB8GME,yes,"The transcript mentions Olivia Tremblay, a tax resident of China with a Bachelor of Engineering, all of which match the JSON data."
+0D2XANLNWB,no,Name and account number do not match. Net worth is significantly different.
+O8W3DPZC0U,no,The account number in the transcript (ZR1001) does not match the account number in the JSON (ZR5009). The profession also differs.
+ZBKI0P43EK,yes,"The transcript correctly states the name, account number, and tax residency, which all match the JSON data.  Minor variations in phrasing are expected in a spoken transcript."
+JJT0E5G3ZB,no,"The transcript states tax residency in the United Kingdom, while the JSON data states India."
+GW74P8SAKY,yes,"The transcript mentions Sophia Almeida, divorced, with SSN 7560210840333, all of which match the JSON data."
+FVRJD27CDC,no,"Name and net worth do not match exactly. Transcript states $45 million, JSON states $300 million."
+5CJ88FMSBA,no,"The transcript states the birthday as 11-05-1987, while the JSON data shows 02.12.1970. This significant discrepancy suggests different individuals."
+O56IYAJKOQ,no,"The transcript states a net worth of $250 million, while the JSON data indicates a net worth of $400 million. Additionally, the profession mentioned in the transcript ('Professional Gamer') does not match the JSON data ('Apprenticeship in Biotechnology')."
+K48DV4C50M,yes,"All key details match: name, net worth, and relationship manager. Minor variations like 'Mio.' vs '$' and  'managed by' vs 'relationship manager' are acceptable."
+D7ATV3H1YD,yes,"All provided data points match the JSON record, including name, account number, and marital status."
+3866QSTGPQ,yes,"The transcript mentions Chen Wei, account number ZR3058, and a neurosurgeon, all matching the JSON data. Minor variations in wording are expected in a transcript."
+27098TXSI3,yes,"The transcript mentions Finn Murphy, widowed, with the matching social security number. Other details like profession and net worth are not mentioned in the transcript."
+51RBYSZVEY,yes,"The name, net worth, and relationship manager match the transcript. Minor variations in spelling (Loke vs Løkke) and punctuation are common in transcriptions."
+J3D6Q83SUO,yes,"The name matches, and the transcript mentions being married, having a net worth of $100 million, which aligns with the provided data."
+P2YCAPIMT8,no,"The transcript states Elena Popova is a Bachelor of Laws, while the JSON says her highest education is a Doctor of Medicine (M.D.)."
+QX9N1VDFJJ,no,"Name and birthday don't match exactly, and social security number is different."
+LDWU4KBNIS,yes,All provided data points match except for marital status. The transcript mentions 'Widowed' while the JSON states 'Widowed'. This is considered a near match.
+ASLJ66JRJL,yes,"The name, profession, and social security number (ignoring formatting) match.  The transcript mentions 'diversifying investment portfolio more aggressively', which aligns with the expected behavior of a hedge fund manager."
+MWT70NTC17,yes,"The transcript matches the JSON data for name, account number, and social security number (ignoring formatting differences). The provided information doesn't include marital status or tax residency, so we cannot verify those."
+PASOTPBNLM,yes,"The name is slightly off (Khoury vs Kouri), but it's likely a transcription error. Other details like marital status, profession, and education match perfectly."
+GMGML0EULU,yes,"The transcript mentions Olivia Tremblay with a net worth of $300 million and tax residency in China, which matches the JSON data."
+77DYFCICAX,yes,"The name, birthday, and highest education match.  While there are variations in spelling and phrasing, the context strongly suggests it's the same person."
+FW71CH9KIC,yes,"The transcript mentions Hiroshi Nakamura, a German taxpayer who wants to sponsor a literature award. This matches the JSON data which shows Hiroshi Nakamura as a German taxpayer and a bestselling author."
+L7EFGCOAD0,yes,"The name is slightly different (Fatima Sara Mansouri vs Fatima Zahra Mansouri), but likely a transcription error. Account number matches, and the profession is consistent with 'Doctor in veterinary medicine'. The request for a 'large untraceable transfer' is concerning but doesn't definitively disprove the match."
+NLOAVVNSZ2,yes,"The name is slightly different (Khoury vs Kouri), but likely a transcription error.  The social security number matches after removing separators. Tax residency is USA in both."
+4ZA11BXYQU,no,Name and account number do not match. Marital status does not match.
+21BT3ARI08,yes,"The transcript mentions Isabella Rossi, widowed, and her relationship manager is James Lee, which matches the JSON data."
+8ZP0P6EA2V,yes,All provided facts match the transcript. Minor variations in wording are acceptable.
+UGZ010DWVA,yes,"All key details match: name, birthday, and net worth.  Minor variations like '31st 07 1964' vs '31.07.1964' and  'under a different name' are likely transcription errors."
+1Z2W0U9OU8,yes,"The name, marital status, net worth, and mention of needing to transfer money offshore align with the provided data."
+CG19UEJT4H,no,Net worth and highest education differ.
+65YME8J8IE,no,The name is slightly different (Khoury vs Kouri) and the net worth is significantly lower in the transcript.
+1I8PRKICC1,no,Name and account number don't match. Net worth is different.
+WSYP46INU1,yes,"The transcript provides a name, birthday, and social security number that match the JSON data. Minor variations in formatting (e.g., commas in the social security number) are expected and should be ignored."
+OVOM1QSTK5,yes,"The transcript mentions Elias Svensson, widowed, needing discreet financial help. This aligns with the provided JSON data for Elias Svensson, widowed."
+L4214B2QPO,yes,"The name, account number, and profession match. Minor variations in spelling (Vandenberg vs van den Berg) and punctuation are common in transcriptions."
+2YD7E0JZWB,no,The profession and highest_previous_education do not match the transcript.
+656QZ2VWR4,yes,"The transcript mentions Jorge Castillo, account number ZR9900, and relationship manager Andre Dupont, all of which match the JSON data.  The request for a discreet withdrawal also aligns with the high net worth indicated in the JSON."
+2TT75RT0RO,yes,"The transcript mentions Anika Patel with a net worth of $350 million and tax residency in France, which matches the provided JSON data."
+A1LPGU21B5,yes,"The transcript mentions Olivia Tremblay, a Venture Capitalist with a Bachelor of Engineering who wants to convert funds. This matches the provided JSON data."
+1BNKNECJRU,yes,"The name, net worth (within reasonable approximation), and social security number match.  Other details like profession and education are not provided in the transcript."
+R18W797V9Q,yes,"The name, birthdate, and tax residency match. Minor variations in phrasing are acceptable."
+8HSVAQ716J,no,Name and account number do not match. Birthday does not match.
+U2OWHF9C2M,yes,"The name is slightly different (Kai Locke vs Kai Løkke), but likely a transcription error. Other details like birthday, relationship manager, and profession match."
+S35MFASKLA,no,Name and birthday do not match
+WGXR3ONJFH,yes,"All key facts match: name, net worth, and tax residency. Minor variations like 'significant amount' vs. '$400 Mio.' and 'discreetly' are expected in a spoken conversation."
+XPU9214EU6,no,Social Security Number and Tax Residency do not match
+HXK7RUM68N,no,"The transcript states tax residency in France, but the JSON says Spain."
+RJ0VF3WCOB,yes,"The name, account number, and social security number match with minor transcription errors (e.g., 'ZR1-01' vs 'ZR1001')."
+Z3FNA3LKXY,yes,"The transcript mentions Santiago Rivera, a married Canadian tax resident, which matches the provided JSON data."
+RF3R75NCG7,no,Account number and highest education do not match.
+3OS373FIQC,yes,"All key details match: name, marital status, relationship manager. Minor variations in spelling (Lena Boyer vs Lena Bauer) are likely transcription errors."
+YE18FH0BFU,yes,"The transcript mentions Charlotte Leclerc, account number ZR1085, and tax residency in Spain, all of which match the JSON data."
+DO2T6GX0CO,no,Name and tax residency don't match.
+5PK8DKP0ZZ,no,Social Security Number and net worth don't match
+JQCJPH64SW,yes,"The name, social security number, birthday, and profession match with some minor spelling variations which are common in transcriptions."
+6RMUDHJM4W,no,"The transcript states a net worth of $300 million, while the JSON data indicates $45 million. This is a significant discrepancy."
+XDAOHC9OY5,no,"The transcript states the person is widowed, while the JSON indicates they are married."
+BW1I95V68P,no,"Name, birthday, profession and highest_previous_education do not match."
+DXUFMO00FS,no,Social security number and profession do not match.
+UX27Y1YUX4,yes,"All key facts match: name, account number, profession, and highest education."
+TQT94705R0,no,Name and birthday don't match
+LTCZ1EWM5K,yes,"The name is slightly different (Khoury vs Kouri), but it's likely a transcription error. Other details like net worth, relationship manager, and profession match."
+R68CAKRCZI,yes,"The name is similar despite potential typos (Siyoyoon vs Seo-yun), the location and relationship manager match, and while profession differs, it's plausible for someone with a net worth of $550 million to have a career change."
+5U8NHGADRR,no,Social security number and birthday do not match.
+E8W0PTQ9KC,no,"Name, birthday, tax residency and profession don't match."
+YZDT3ZMHJF,no,Name and tax residency do not match
+FSPNRHDS44,yes,"The name is similar despite slight variations (Lara Vandenberg vs Lara van den Berg), the tax residency and highest education match, and the urgency of the request aligns with the high net worth."
+7FPDGERPRV,yes,"The transcript mentions Jorge Castillo with the correct social security number and Bachelor in Environmental Science.  While some details are missing, the provided information strongly suggests it's the same person."
+JXZMWLFM1N,yes,"The transcript mentions Mia Anderson with a Certificate in Dental Hygiene, managed by Aisha Khan, which matches the JSON data."
+UDTA6SHXDI,no,Name and birthday do not match.
+A3B4QBVRXQ,no,Name and account number do not match.
+GE90UVYAIC,yes,"The transcript mentions 'Chen Wei' with a 'Bachelor of Laws, LLB' and being divorced, which matches the provided JSON data."
+30AERYBO11,yes,"All key details match: name, birthday, net worth. Minor variations in wording are expected in a transcript."
+B5PN7WKKMI,no,"The birthday, account number, and social security number do not match."
+N09DENCIJ3,yes,"The transcript mentions Isabella Rossi, account number ZR9023, and James Lee as the relationship manager, all of which match the JSON data."
+QR1QDMLAXQ,yes,"The transcript mentions Hiroshi Nakamura, managed by Michael O'Connor, and account number ZR7102, all of which match the JSON data."
+I1II0JEBC3,yes,"All key details match: name, profession, relationship manager, and tax residency. Minor variations in phrasing are expected in a spoken transcript."
+0GO9BNG5JC,yes,"The transcript mentions 'Lara Vandenberg', which closely matches 'Lara van den Berg'. The transcript also mentions 'Master of Education', matching the JSON data.  The urgency and request for an untraceable account further support a match."
+Q7QQE54CKS,no,"The transcript states the person is married, while the JSON says they are single."
+22LW1V963Y,yes,"Name, birthday, and account number match with minor spelling variations (Locke vs Løkke) which are common transcription errors.  Other details not mentioned in the transcript."
+2IM42LTT5R,yes,"The transcript accurately reflects the provided information about Isabella Rossi, including her relationship manager, marital status, and intent to move funds offshore."
+HEHXM9668B,no,"The transcript states the person is married, while the JSON indicates they are single."
+CZ35XEIQQL,yes,"The name is similar (Siu Yun Kim vs Seo-yun Kim),  'Akeli' could be a transcription error for 'Egypt', and the request for an untraceable transfer aligns with the high net worth."
+HAN10YME1F,yes,"All key details like name, net worth, and tax residency match the transcript."
+GQDKZ8GJ7O,no,Name and account number don't match.
+GDLKIPE3CH,yes,"The transcript mentions Isabella Rossi, a widowed tax resident of Russia needing to transfer funds. This aligns with the provided JSON data for Isabella Rossi, who is widowed, a tax resident of Russia."
+WOY6M7Y3D8,yes,All provided information matches the JSON data. Minor variations in whitespace are acceptable.
+ZCB53KC2PC,yes,"All key details like name, account number, and tax residency match. Minor variations like 'Sophia' vs 'Sofia' and 'Hello' at the beginning are common transcription errors."
+66420YSP5M,no,"Name and birthdate don't match, net worth is different."
+6W361V5VV9,yes,Name and SSN match with some minor spelling variations. Birthday also matches.
+IH6195R5YX,no,Account number and profession don't match.
+27L7Y08ROR,yes,"The transcript mentions Santiago Rivera, an MBA in Finance and a Real Estate Mogul, which matches the provided JSON data."
+88LIKKIYG5,yes,"The name is Amina Khoury vs Amina Kouri, which is likely a transcription error. The net worth and relationship manager match. Other details like profession and birthday are not mentioned in the transcript."
+U73VXHISZY,no,"Birthday, profession and marital status do not match"
+Y285MKKJ4J,yes,"The name is Elias Svensson vs Elias Venzon (likely a typo), profession matches, and relationship manager is Ian Clarke vs Young Clark (likely a typo)."
+244F8XZK0E,yes,"Name, birthday, social security number match despite minor spelling variations.  Other details not provided in the transcript."
+WRGLR1OM65,no,Tax residency is different (Mexico vs. Japan) and the social security number doesn't match exactly.
+DKTQZASTB9,yes,"All key details match: name, social security number, net worth. Minor variations in formatting (e.g., spaces, punctuation) are expected in a transcript."
+OG64GZNSWE,yes,"The name is slightly different (Yoo Hyun Kim vs Seo-yun Kim), but likely a transcription error. Other details like birthday, account number, and profession match."
+W9Z4GUIV4K,no,"The transcript states a net worth of $430 million, while the JSON data shows $45 million. This significant discrepancy suggests a mismatch."
+1QJIZTDX38,yes,"The name, birthday, and marital status match.  While other details are not provided in the transcript,  it's sufficient to confirm the person's identity based on the given information."
+WML4D26C67,no,Social Security number and relationship manager do not match.
+P1BEOYNKDF,yes,"The name is slightly off (Marfi vs Murphy), but likely a transcription error. The account number and social security number match, despite formatting differences. Other details like profession and net worth are not mentioned in the transcript."
+R3TKLL4WU1,no,Social Security number doesn't match exactly and profession is different.
+6MKIUXJ6CQ,yes,"The transcript mentions Jorge Castillo with account number ZR9900 and a degree in Environmental Sciences, matching the JSON data. Minor variations in wording are expected in a transcript."
+56K4DSES6F,yes,"The name is slightly different (Kai Lucke vs Kai Løkke), but likely a transcription error. Other details like profession, education, and tax residency match."
+GWE85UXMG3,yes,"The name is slightly different (Khoury vs Kouri), but likely a transcription error. Other details like tax residency, profession, and highest education match."
+GMEGHRIW0J,yes,"The transcript mentions Liam O'Brien, a hedge fund manager with a net worth of $180 million looking to leverage assets for a venture fund. This aligns with the provided JSON data which lists Liam O'Brien as a Hedge Fund Manager with a net worth of $180 Mio."
+EF57WPNJAM,yes,"The name is similar, and the profession aligns with the high net worth. The request for anonymous cryptocurrency transactions is consistent with someone of their financial status."
+Y6K2JU2H4B,yes,"The transcript mentions Mia Anderson, a music producer with a certificate in dental hygiene, which matches the provided JSON data."
+1VVQNIU4I4,yes,"The transcript mentions Dr. Elena Bobova, a professional athlete. The JSON data confirms Elena Popova as a professional athlete with a Doctor of Medicine degree. The name difference is likely a transcription error."
+H01FH3KEY8,yes,All provided facts match the transcript. Minor variations in formatting and wording are expected in a transcript.
+PYVE80HN4Y,no,The net worth and social security number do not match.
+2B68X3TLPO,no,"The account number provided in the transcript (ZR3389) does not match the account number in the JSON (ZR2245). Additionally, the relationship manager mentioned in the transcript (Jan Clark) does not match the one in the JSON (Julia Kowalski)."
+572K7GROWM,no,Name and tax residency do not match.
+UMM0YIUKNH,no,"The transcript states a net worth of $300 million, while the JSON data indicates a net worth of $120 million."
+F3AJRF7TJG,no,"Name and net worth do not match. Transcript states 'Lara Vandenberg' and $180 million, while the JSON states 'Lara van den Berg' and $60 million."
+VKDMNUUZX2,yes,"All provided information matches the JSON data. Minor variations in phrasing (e.g., 'without notifying anyone') are acceptable."
+T83G4QLO49,yes,"The transcript mentions Anika Patel with a PhD in Physics and a celebrity chef, which matches the JSON data. Minor variations in wording are expected in a transcript."
+TC1N3OMAN3,no,"The transcript states the person is a film director, while the JSON says they are an International Pop Star."
+KO0PCC5TE8,yes,"The transcript matches the JSON data for name, birthday, nationality, and profession. Minor variations like spacing and capitalization are acceptable."
+W8ENISIETU,no,The birthday and social security number don't match.
+BDMI3ZXH0S,no,The birthday and account number don't match the transcript.
+6L88Z54PYV,no,"The social security number provided in the transcript does not match the one in the JSON record. Also, the account number does not match."
+YDDKTODLGX,yes,"The name, birthday, profession, and highest education match.  Minor variations in name spelling (Farima vs Fatima Zahra) and  'large sum' vs 'net_worth_in_millions' are likely due to conversational style and information provided."
+LIZ88MPJYN,yes,"The name, social security number (ignoring formatting), and profession align with the JSON data. The request for discreet movement of funds is also consistent with the high net worth indicated in the JSON."
+ZX4733CP7F,yes,"The transcript accurately reflects the name, birthday, and marital status from the JSON data. While the profession and other details don't match, the core identifying information aligns."
+072VW2DTHZ,no,"Name, birthday, and net worth do not match."
+J2KO453ZT9,yes,"The name is slightly off (Rory vs Jorge), but likely a transcription error.  The net worth, relationship manager, and request for off-the-radar transactions all align with the provided data."
+YEQHIRWT8P,no,Name and birthday do not match.
+X8L6WJ0NDN,no,"The name, social security number, and birthday do not match."
+X4ASJ6RLN6,no,The relationship manager's name and account number don't match the transcript.
+MA1CKK4XZH,yes,"The name, profession, and net worth match the transcript.  Minor variations in wording are acceptable."
+9YJUUID3DV,yes,"The name is similar (Amina Khoury vs Amina Kouri), the social security number matches, and the education level is the same. Other details like profession and net worth are not mentioned in the transcript."
+AOPBZ7X6AE,yes,"The name is close (Anika vs Anita), the account number is similar (ZR6190 vs 7R6190), and the relationship manager is the same. Other details are not provided in the transcript."
+YPME5D9Q5F,yes,"The transcript mentions Liam O'Brien with account ZR5009 and states they are a Hedge Fund Manager, all matching the JSON data."
+4USM1D1I1Q,no,"error: failed to process transcript"
+Y00KJWDL6W,no,"The transcript states a net worth of $900 million, while the JSON data indicates a net worth of $220 million. This significant discrepancy suggests the caller is not the person in the JSON data."
+GP7GTLRONW,no,"Name and birthday do not match. Transcript states December 22nd, 1992, JSON states May 17th, 1988."
+HCCDN2TD0R,no,Name and profession are close but not exact matches.
+BZMVM7UDDC,yes,"The name, net worth, and marital status match the JSON data. Minor variations in wording (e.g., 'million' vs 'Mio.') are acceptable."
+J0OF821KRS,no,"The transcript states the person's profession is an international pop star and their birthday is May 17, 1988. The JSON data states the person is a renowned neurosurgeon and was born on 09.07.1975."
+XI3FSQ31EF,no,"The transcript states the person is a tax resident of Japan, while the JSON data indicates Mexico."
+221Y2P3R9J,yes,"The transcript mentions Mia Anderson, which matches the name in the JSON. It also states a Bachelor of Science in Computer Science, while the JSON says Certificate in Dental Hygiene, which could be a transcription error. The other details like relationship manager and profession don't match, but these are not crucial for verifying the identity based on the given information."
+45XXUUVBQU,no,"Marital status does not match (transcript says married, JSON says divorced)."
+K681L5OQ3R,yes,"All key details match: name, relationship manager, profession, and highest education. Minor variations like 'Clark' vs 'Clarke' are acceptable."
+ITIM1J0WSF,no,Name and account number don't match
+IIBWPCAJFZ,yes,"All key details match: name, tax residency, and relationship manager. Minor variations like 'Lena Boyer' vs 'Lena Bauer' and the phrasing about the transaction are likely due to transcription errors."
+VAUS6D0S3K,no,Name and social security number don't match exactly.
+10M5MCMSO3,yes,"All provided facts match the JSON data, considering potential transcription errors."
+1PSFC9GSK4,yes,"The transcript mentions Santiago Rivera born on April 15th, 1982, and married, which matches the JSON data.  "
+AXZKAINTK1,no,Name differs (Lucke vs Løkke) and profession doesn't match.
+8WTA54PGBC,yes,"All key facts match: name, net worth, profession, and highest education. Minor variations in wording are expected in a transcript."
+FG1GU97VU5,yes,"The transcript mentions Hiroshi Nakamura with a Bachelor of Public Health and tax residency in Germany, which matches the JSON data."
+3GUM6SI9RE,yes,"The transcript mentions Liam O'Brien, account number ZR5009, and states he is single, all of which match the JSON data."
+4LVFXVFAI5,no,"Name, birthday, net worth, and profession do not match."
+JWSBZ4LZRX,no,"The transcript states the person is divorced, while the JSON indicates they are married."
+IU50O8RY55,yes,"The transcript mentions Mia Anderson with a net worth of $430 million and tax residency in India, which matches the JSON data."
+FVILFM7OSU,no,Name and social security number don't match exactly. Net worth is significantly different.
+KD73PJ3EP5,yes,"All provided facts match the JSON data. Minor variations in wording (e.g., 'married' vs. 'marital_status: Married') are acceptable."
+KZ3VCLL0J6,no,"Name, Social Security Number and marital status do not match."
+3162VQ31V7,yes,All facts mentioned in the transcript match the JSON data. Minor inconsistencies like 'Luxury Goods Designer' vs 'Diploma in Music Performance' are acceptable as they could reflect different aspects of the person's identity.
+N2VPD13IWV,no,Social Security number and name don't match exactly.
+TFREKW8N0X,yes,"The name is slightly different (Kai Luca vs Kai Løkke), but likely a transcription error. Account number matches, profession matches, and the request for an untraceable transfer aligns with the profile."
+ISDFCVKRVC,no,The transcript mentions Isabella Rossi born on 5th March 1966 with relationship manager Julia Kowalski. The JSON data states Isabella Rossi born on 07.03.1978 with relationship manager James Lee.
+XW6NK8Y9MH,no,"The transcript states a net worth of $950 million, while the JSON data states a net worth of $350 million. The transcript also states an associate degree in social work, while the JSON data states a Ph.D. in Physics. These are significant discrepancies."
+FNHZ7WDW7Y,yes,"The name, net worth, and marital status match the transcript. Minor variations in formatting and spelling are expected in a transcript."
+ECGD9KF3VX,no,"The transcript states tax residency in Nigeria, while the JSON says Brazil. Net worth is also significantly different."
+R8ARFXA62G,yes,"The transcript mentions Anika Patel, a tech startup founder managed by Ella Morrison. The JSON data confirms Anika Patel as the name and also mentions Ella Morrison as her relationship manager. "
+SJ75YFI4ET,no,"The transcript states the person is divorced, while the JSON states they are widowed."
+WDZIHM70NH,yes,"The name, account number, and social security number match the transcript.  Minor variations in formatting are expected in a transcript."
+T3NR1G1FFR,yes,"All provided details match the JSON record, considering potential transcription errors."
+XIB265Q1SJ,no,"Name and net worth don't match. Transcript says Lara Vandenberg with $400 million, JSON says Lara van den Berg with $60 million."
+BN764APWDT,no,"The transcript states the person is a tax resident of Turkey, while the JSON data says they are a tax resident of the United Kingdom."
+UTFYOXUEPH,yes,"The transcript mentions Fatima Zahra Mansouri, married, and a tax resident of South Africa, which matches the JSON data."
+O0DETC0XV6,no,"The transcript states the person is a tax resident of Mexico, while the JSON data says they are a tax resident of Canada."
+YQEUHTOP2I,yes,"The transcript correctly mentions Sofia Almeida, her social security number (ignoring formatting differences), and her net worth. While other details are not provided in the transcript, these key pieces of information strongly suggest it's the same person."
+9OPVZ6VP7K,yes,"Name, birthday, and marital status match despite minor variations in spelling.  "
+C14AN35RKC,yes,"The transcript mentions Sofia Almeida, a corporate lawyer with a PhD in Economics, which matches the provided JSON data."
+ZVM6ABNSS1,no,Name and social security number don't match exactly
+U31ZKRHJ9K,yes,"The name is slightly off (Mia Anderstin vs Mia Anderson), but it's likely a transcription error. Other details like marital status, relationship manager, and profession align."
+25LY8GI6DE,no,"The transcript states Sofia Almeida is married, while the JSON says she is divorced."
+FSO4MWKKAR,yes,"Name is similar (Svensson vs Venson), profession matches (Designer vs Luxury Goods Designer), tax residency matches (Australia), and highest education matches (Diploma in Music Performance vs Diploma in Musical Interpretation)."
+BK38HX9NS4,yes,"The name, social security number, and relationship manager all match. Minor variations in spelling are acceptable."
+4KEPG8K8NX,yes,All provided facts match the JSON data. Minor variations in phrasing are acceptable.
+KF2U0T542I,yes,"The transcript mentions Chen Wei, a renowned neurosurgeon with social security number 756-1357-2468-12. This matches the provided JSON data for Chen Wei, including his profession and social security number (ignoring formatting differences)."
+75UEPXC0IW,yes,"Name, social security number, and highest education match. Other details not provided in transcript."
+JQ7FW67TJ8,no,"The birthday, account number and name don't match."
+8R488ER0ZH,no,The account number and social security number don't match the provided JSON data.
+1O4FGEX31T,yes,"Name is similar (Venson vs Svensson), net worth and tax residency match. Other details not relevant for verification."
+AIQPXRJKF7,no,Name and net worth don't match
+Q7WD8INZQ5,yes,"All key facts match: name, marital status, highest education.  Minor variations in wording are expected in a transcript."
+XUO9R4GLWS,yes,All provided facts match the JSON data. Minor inconsistencies like whitespace and missing commas in the transcript are acceptable.
+O7O51MZU4N,yes,"The name, social security number, and tax residency match the JSON data. The request for an anonymous trust fund aligns with the profile of a high-net-worth individual."
+1JGXELMHOF,yes,"The name, net worth, and relationship manager match the transcript."
+YLGDVW6WCT,no,"Tax residency stated in the transcript is Italy, but the JSON data says Germany."
+6W52WZKXOC,yes,"The name, social security number, and marital status match despite minor variations in spelling and formatting. "
+SUGHP6NLPK,no,Social Security number and relationship manager don't match.
+QJ2T20DZCY,no,"The birthday, net worth, and some details about the request don't match the provided JSON."
+ZKY5P7R745,no,"The transcript states Elena Popova's profession as Environmental Scientist and net worth as $220 million, while the JSON data shows her as a Professional Athlete with a net worth of $900 million."
+EK53ZI08W8,yes,"The transcript mentions Finn Murphy, a professional gamer managed by Sean Murphy, which aligns with the provided JSON data."
+HB5IYNTKK9,no,"The transcript states the relationship manager is Tomas Moreno, while the JSON data says it is Raj Patel."
+6WFZ2WDJ24,yes,"The name is similar (Su Yun Kim vs Seo-yun Kim), and other details like marital status, profession, and nationality match."
+4M2D4IB9S6,no,Name and account number do not match.
+7OYEBPQERQ,yes,"The transcript mentions Fatima Zahra Mansouri with account number ZR4421 and a net worth of $100 million, which all match the JSON data."
+NZBALVR6CF,yes,"The transcript mentions Mia Anderson, account number ZR1001, and managed by Aisha Khan, all of which match the JSON data. Minor variations in names (e.g., Aishah vs Aisha) are acceptable."
+GZZWB0E3AX,yes,"The transcript mentions Charlotte Leclerc, a tax resident of Spain with a Pharmacy Technician Certificate, which matches the provided JSON data."
+6NPGSW6R8P,yes,"The name, birthday, and tax residency match the JSON data. Minor variations in wording (e.g., 'Sophia' vs 'Sofia') are likely transcription errors."
+4LOY1URGVH,yes,"All key details like name, birthday, and relationship manager match. Minor variations in phrasing are expected in a spoken transcript."
+EMW8PK5F2G,no,The account number and net worth provided in the transcript do not match the JSON data.
+XUOU6FH2DR,no,"The transcript states a net worth of $850 million, while the JSON data shows $500 million."
+AM3UVRYGAU,yes,"All key details like name, birthday, and account number match the JSON data. Minor variations like '13th' vs '13.01' in birthday are acceptable."
+JBX7H4T33L,no,The birthday and social security number do not match.
+H2HPWO8E99,yes,"The name is very similar (Laura Vanderberg vs Lara van den Berg), the net worth matches, and the profession is the same."
+97NV00K4YA,yes,"The transcript correctly identifies the name as Amina Khoury (allowing for potential transcription errors like 'Kouri'), the birthday as 23rd November 1991, and the relationship manager as Ella Morrison. Other details like profession and net worth are not mentioned in the transcript."
+U91VS1DG4X,yes,"The name is Kai Løkke vs Kaj Loke (likely a transcription error), the social security number matches, and the profession aligns with 'Cryptocurrency Investor' and the high-payment reference."
+4OZB2350T9,no,The profession and net worth do not match the transcript.
+EGTMM9VP8Z,no,"The transcript states the birthday as 11-05-1987, while the JSON provides 30.01.1999.  "
+C5YK4RN57W,no,Social security number and profession don't match
+ZYD38PBMCH,yes,"The transcript mentions Charlotte Leclerc, a certified pharmacist managed by Lena Bauer. This matches the provided JSON data."
+541T0I3AUW,no,"The transcript states a net worth of $430 million, while the JSON data shows a net worth of $25 million. This significant discrepancy suggests a mismatch."
+XATHQAOSPE,no,The account number and birthday do not match the JSON data.
+YEZKNC4RNY,no,The transcript mentions account number ZR1101 while the JSON states ZR9023. Profession is also different: music producer vs. Art Dealer.
+Z1BCC9U0E5,yes,"The name, birthday, and net worth match with minor variations in formatting.  The transcript mentions 'hide some income quickly' which aligns with the potential financial needs of a high-net-worth individual."
+NYCGDNV50A,yes,"The name, social security number, and profession match the JSON data. Minor variations in name spelling (Lara Vanderberg vs Lara van den Berg) and profession (AI scientist vs AI Research Scientist) are acceptable."
+42784TS74Q,no,The transcript mentions account number ZR8804 while the JSON states ZR7732. Net worth is also different ($950 million vs. $400 million).
+L4I0OY5T07,no,"The transcript states the person is an AI research scientist and a Master of Education, while the JSON says they are a Real Estate Mogul with an MBA in Finance."
+HBY762ULBC,no,"The transcript states a net worth of $60 million, while the JSON data indicates a net worth of $220 million."
+VLGVUDJ90Q,yes,"The transcript clearly states 'Liam O'Brien', matching the name in the JSON. "
+ARMR64W5O0,yes,"All key details match: name, birthday, and marital status.  "
+TEKJPG39QQ,no,Name and tax residency do not match.
+ZPBG7LTFP7,no,Name and tax residency do not match.
+G2LC5CGD8K,yes,"The name is slightly different (Fatima Sara vs Fatima Zahra), but likely a transcription error.  Other details like birthday, tax residency, and profession align."
+N1WUHGN5J1,no,The account number and net worth don't match the JSON data.
+OA8CVUPFQ2,yes,"The transcript mentions Anika Patel with SSN 7563654284766, matching the JSON data.  The transcript also states a PhD in Physics, aligning with the JSON."
+QI3IGYH5L4,yes,"The name, account number, and social security number all match with minor potential transcription errors (e.g., spacing).  "
+MPPY809BIA,yes,"The name, social security number (ignoring formatting differences), and relationship manager match.  Other details like profession and birthplace are not provided in the transcript."
+EFBZ19FLZB,no,The birthday and marital status don't match.
+I1TDO1US28,yes,Name and account number match with minor variations possible due to transcription. Social security number also matches ignoring formatting differences.  
+DDDN8ANJT0,yes,"The name, tax residency, and relationship manager match the transcript. Minor variations in spelling and punctuation are acceptable."
+L7C6MV0Z84,yes,"The name is slightly off (Fatima Sara vs Fatima Zahra), but it's likely a transcription error. The social security number matches, and the mention of being married aligns with the data."
+LMFZ8A6OUU,no,Marital status and tax residency do not match.
+1H1SA1OIYA,yes,"The transcript mentions Fatima Zahra Mansouri with SOFI number 756 and fiscal residence in South Africa, matching the JSON data. There might be some typos in the transcript, but the key information aligns."
+3GHXFOJQ2L,no,The account number and net worth don't match the JSON data.
+421BPRLP1H,yes,"Name, net worth, and relationship manager match. Minor variations in spelling (Leclerc vs. Leclerc, Boyer vs. Bauer) are likely transcription errors."
+XV45S85AXQ,no,The transcript states the account number is ZR7732 while the JSON data shows ZR8097. The profession also differs (Biotechnology Apprenticeship vs Film Director).
+9EY8WR8CDU,yes,"The name, profession, and social security number all match.  Minor variations in wording are expected in a transcript."
+MG1JCLM1X9,no,"Name and account number don't match, tax residency is different."
+FA79Q4F0H0,no,Social Security Number doesn't match
+TDH5H2CF40,yes,"The name, birthday, and social security number match with some minor variations in formatting. The request for an anonymous trust fund aligns with the high net worth indicated in the JSON."
+JYA410BBKR,yes,"The name, profession, and social security number match with minor variations possible due to transcription errors. The request for moving money under a different name aligns with potential financial activities of a private equity partner."
+H1SQXI3VG1,yes,"All key information matches: Name, account number, and social security number (ignoring formatting differences). "
+3TUKKW5GXO,yes,"The transcript correctly states the name Anika Patel, birthday 1992-12-22, and tax residency in France, matching the JSON data."
+9SKVMHKUAV,no,"The transcript states Sofia Almeida was born on 2nd of December 1970 with a Doctor of Veterinary Medicine degree, while the JSON data indicates she was born on 05.03.1966 and holds a Ph.D. in Economics."
+FJDGLG7POQ,yes,"All key facts match: name, tax residency, highest education."
+Y5K92G0CA2,yes,"The name, tax residency, and social security number match despite minor formatting differences."
+FPLK2Z9M1O,yes,"The name is slightly different (Kai Locke vs Kai Løkke), but likely a transcription error. All other details match perfectly, including the account number and marital status."
+V1Q3EL4Z4X,yes,"The name, account number, and profession match the JSON data. Minor variations in wording are expected in a transcript."
+F68PGID9TU,no,"The transcript states the person is widowed, but the JSON indicates they are married."
+QB8U1CAEOV,no,Name and net worth do not match
+4REKDG0V64,yes,"All key details match: name, social security number (ignoring formatting), and net worth.  Minor variations in wording are expected in a transcript."
+RLL2WGXJRT,yes,"All key details match: name, account number, and relationship manager. Minor variations in phrasing are expected in a spoken transcript."
+CAJAINRPE5,yes,"All key details match: name, profession, and relationship manager. Minor variations in wording are expected in a transcript."
+7TW6HKDNII,no,"The birthday, profession, and highest_previous_education do not match the transcript."
+RSQQ5YEC8W,yes,"The name matches, and while marital status differs, 'widowed' likely refers to a recent change in status from 'Divorced'."
+GHSWJ7IZ96,yes,"The name is close enough ('Amina Khoury' vs 'Amina Kouri'), the relationship manager matches, and the net worth is the same. Other details are not provided in the transcript."
+6QOZ04UI5X,yes,"All key details match: name, net worth, social security number (ignoring formatting differences)."
+LO0F70NRDD,yes,"The transcript mentions Chen Wei with SSN 756-1357-2468-12 and a net worth of $75 million, which matches the JSON data.  Minor variations in formatting (like dashes in the SSN) and wording (net worth in millions vs. dollars) are acceptable."
+0ZKZ7CTPCO,no,Social security number and relationship manager do not match
+LWEWBT96XT,yes,"The transcript mentions Jorge Castillo with account number ZR9900 and a net worth of 220 million dollars, which matches the provided JSON data."
+Y0SQ3LTXI3,yes,"The transcript mentions Charlotte Leclerc, a private equity partner with a net worth of $30 million, seeking a secret account. This aligns with the provided JSON data which lists Charlotte Leclerc as a private equity partner with a net worth of $30 million."
+0D8CAOL7XN,no,"The transcript states a net worth of $550 million, while the JSON data shows a net worth of $300 million."
+LLG5ML8RHL,no,"The transcript states Sophia Almeida is married, while the JSON indicates she is divorced."
+CVQ1Z7EQVZ,yes,"All provided details match except for missing details like birthday, net worth, profession, social security number, relationship manager and highest_previous_education which are not mentioned in the transcript."
+JRDBXRBEZ5,yes,"The transcript mentions Olivia Tremblay, born on September 19th, 2005, with a Bachelor of Engineering, requesting a secret account for private investment. This aligns with the provided JSON data."
+9QO189PLWT,yes,"The name, social security number, and net worth match despite minor spelling variations and formatting differences in the transcript.  The other details (like profession, education, and relationship manager) are not provided in the transcript and thus cannot be used for comparison."
+27FYVYRXHC,yes,"The transcript mentions Mia Anderson, married, and a music producer, which all match the JSON data."
+GINYUH6NU7,no,Account number and profession do not match.
+MIRV2AHSDH,yes,"All provided information matches the JSON data, considering potential transcription errors."
+CBDX295MEZ,yes,"All provided data points match except for the missing marital status and profession information in the transcript. The transcript also mentions a transfer to an offshore account, which is not directly reflected in the JSON data."
+ZVS4M3Y201,yes,"The name, birthday, and profession match the transcript.  The transcript mentions a 'dental hygiene certificate' which aligns with 'Certificate in Dental Hygiene'. "
+ROHDD0Z6CG,yes,"The transcript mentions Noah Zimmerman, a tax resident of Italy with a diploma in Urban Planning, matching the provided JSON data."
+XKG8C7QFXT,no,"Name, profession, tax residency and other details don't match"
+FGQ1PL8LA6,no,Name and birthday do not match exactly. 
+FJYXJHG2KM,yes,"The name, net worth, and relationship manager match the transcript."
+E1I3Y679E0,yes,Name and SSN match despite potential typos. Other details like profession and education also align.
+0RASQ7TQKJ,no,"The transcript states the person is a neurosurgeon and has a Bachelor of Laws, while the JSON states their profession is Yacht Broker and their highest education is a Bachelor in Environmental Science."
+77C2EX0563,yes,"The name is slightly different (Kai Lucke vs Kai Løkke), but likely a transcription error. All other details match, including the account number, social security number (ignoring formatting), and request for an anonymous trust fund."
+P4TDYTUQNV,no,"The transcript states tax residency in Australia, while the JSON data indicates Brazil."
+ZRFQJ78VMK,yes,"The transcript mentions Noah Zimmerman with a net worth of $120 million and Italian tax residency, matching the JSON data."
+VXC2DB72R7,no,Social Security number and birthday don't match.
+UR36VE8KU4,no,"The transcript states Sofia Almeida is widowed, while the JSON says she is divorced."
+R3SUR0CZW3,yes,"The transcript mentions Hiroshi Nakamura, a tax resident from Germany managed by Michael O'Connor, which matches the JSON data."
+23TVDEG2YC,yes,"The transcript mentions Santiago Rivera, account number ZR2094, and an MBA in Finance, all of which match the JSON data."
+IF73FAK84R,yes,"All key details like name, account number, and birthday match the JSON data. Minor variations in formatting and phrasing are expected in a transcript."
+OW6VLRXPJT,no,"The transcript states tax residency in the United Kingdom, while the JSON data says Brazil."
+OWH38MT8MT,yes,"The name 'Guafu Yishabela Roxy' likely contains transcription errors of 'Isabella Rossi'. The profession mentioned, 'Art Dealer', matches the json data."
+ZZNLOGOUC9,yes,"The transcript matches the JSON data for name, account number, and tax residency.  "
+M97BEZCB1V,no,"The transcript states the person is widowed, while the JSON indicates marital status is 'Married'."
+12MINIG2V7,yes,"The name 'Charlotte Leclerc' matches, and the profession 'Private Equity Partner' aligns with 'venture capitalist'.  "
+6A0ZBCDFGV,yes,"The transcript mentions Jorge Castillo with account number ZR9900 and tax residency in Indonesia, which all match the provided JSON data."
+MMPJO0MZ0N,yes,"The transcript mentions Jorge Castillo with a Bachelor in Environmental Science and married, which matches the provided JSON data."
