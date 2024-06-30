@@ -1,13 +1,16 @@
 from typing import Tuple
 import json
 import os
+import logging
 
 import requests
 import pandas as pd
 from rapidfuzz import fuzz
 
 
-# FIXME: this should be in postgres
+logging.basicConfig(level=logging.INFO)
+
+# FIXME: this should be in postgres but for now it's fine
 # load dataframes
 client_features_df = pd.read_csv("/app/data/client_features.csv")
 # remove all symbols from social security numbers except numbers
@@ -102,7 +105,9 @@ def _best_match(query):
         lambda row: fuzz.ratio(row["name"], query["name"]), axis=1
     )
     best_name_match_row = client_features_df.iloc[name_scores.idxmax()]
-
+    # btw this was supposed to be transformed into a json string or csv like string to save on tokens,
+    # but it worked better than the other 2 so I just pass the raw dataframe directly to the prompt
+    # lol
     return best_name_match_row
 
 
@@ -112,6 +117,7 @@ def fact_check_flow(transcript: str) -> Tuple[bool, str]:
     try:
         best_matching_row = _best_match(extracted_facts)
         factually_correct_data = check_if_row_matches(transcript, best_matching_row)
+        logging.info(factually_correct_data)
         return (
             factually_correct_data["is_matching_person"],
             factually_correct_data["reasoning"],
