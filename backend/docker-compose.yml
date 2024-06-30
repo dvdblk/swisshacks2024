@@ -23,8 +23,11 @@ services:
 
   ml:
     build:
-      context: ./ml
+      context: ../
+      dockerfile: backend/ml/Dockerfile
     tty: true
+    environment:
+      - OLLAMA_API_URL=${OLLAMA_API_URL}
     volumes:
       - huggingface_cache:/root/.cache/huggingface
     depends_on:

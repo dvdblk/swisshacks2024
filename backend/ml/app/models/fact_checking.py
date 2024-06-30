@@ -1,23 +1,33 @@
-from dotenv import load_dotenv
-import os
+from typing import Tuple
 import json
-import csv
+import os
+
 import requests
 import pandas as pd
 from rapidfuzz import fuzz
 
-load_dotenv()
+
+# FIXME: this should be in postgres
+# load dataframes
+client_features_df = pd.read_csv("/app/data/client_features.csv")
+# remove all symbols from social security numbers except numbers
+client_features_df["social_security_number"] = client_features_df[
+    "social_security_number"
+].str.replace(r"\D", "", regex=True)
 
 
 # Function to interact with Ollama API
-def generate_text(prompt, model_name="gemma2:9b-instruct-fp16"):
+def generate_text(prompt, model_name="phi3:instruct"):
+    # FIXME: pydantic settings
     url = os.getenv("OLLAMA_API_URL")
     data = {
         "model": model_name,
         "prompt": prompt,
         "stream": False,
         "options": {
-            # fyi this param is a number of gpu "layers", not exactly the number of gpus
+            # Note:
+            # this param is the number of gpu "layers", not exactly the number of gpus
+            # needed for my 1080 + 1070 setup because im gpu poor
             "num_gpu": 26,
         },
     }
@@ -25,8 +35,12 @@ def generate_text(prompt, model_name="gemma2:9b-instruct-fp16"):
     return response.json()["response"]
 
 
-# Define the check_transcript function
-def check_transcript(transcript):
+def _extract_facts_from_transcript(transcript):
+    """
+    Extracts all available facts from a transcript.
+
+    Note: FIXME pydantic
+    """
     INSTRUCTIONS = """You are an AI assistant that extracts important facts from a transcripts of a phone call to a bank. ALWAYS provide your responses in the following JSON format which contains the information you need to extract:
     {
     "name": <the name of the person speaking, always comes first in the transcript>,
@@ -56,44 +70,6 @@ def check_transcript(transcript):
         return {"error": "Failed to parse JSON", "raw_output": response}
 
 
-# Load client features
-with open(os.getenv("DATA_PATH") + "/client_features.csv", "r") as f:
-    client_features = pd.read_csv(f)
-
-    # lowercase every string in the database
-    # client_features = client_features.applymap(lambda s: s.lower() if type(s) == str else s)
-
-    # remove all symbols from social security numbers except numbers
-    client_features["social_security_number"] = client_features[
-        "social_security_number"
-    ].str.replace(r"\D", "", regex=True)
-
-    # convert to string
-    client_features_string = client_features.astype(str)
-
-
-# Load transcripts
-transcripts = {}
-with open(os.getenv("DATA_PATH") + "/transcriptions.csv", "r") as file:
-    reader = csv.DictReader(file)
-    for row in reader:
-        transcripts[row["Audio File"]] = row["Transcription"]
-
-
-df = pd.read_csv(os.getenv("DATA_PATH") + "/client_features.csv")
-# remove all symbols from social security numbers except numbers
-df["social_security_number"] = df["social_security_number"].str.replace(
-    r"\D", "", regex=True
-)
-
-def best_match(df, query):
-    # get the row with the best matching name
-    name_scores = df.apply(lambda row: fuzz.ratio(row["name"], query["name"]), axis=1)
-    best_name_match_row = df.iloc[name_scores.idxmax()]
-
-    return best_name_match_row
-
-
 def check_if_row_matches(transcript, matched_person_string):
     INSTRUCTIONS = """You are an AI assistant that needs to verify whether a transcript of a phone call matches the json record. ALWAYS provide your responses in the following JSON format:
     {
@@ -120,56 +96,28 @@ def check_if_row_matches(transcript, matched_person_string):
         return {"error": "Failed to parse JSON", "raw_output": response}
 
 
-import logging
+def _best_match(query):
+    # get the row with the best matching name
+    name_scores = client_features_df.apply(
+        lambda row: fuzz.ratio(row["name"], query["name"]), axis=1
+    )
+    best_name_match_row = client_features_df.iloc[name_scores.idxmax()]
 
-# Configure logging to output to stdout
-logging.basicConfig(level=logging.INFO, format="%(asctime)s:%(levelname)s:%(message)s")
+    return best_name_match_row
 
 
-# load already processed fact_check IDs from fact_checks_v2.csv
-processed_fact_checks = set()
-with open(os.getenv("DATA_PATH") + "/fact_checks_v2.csv", "r") as file:
-    df_fact_checks = pd.read_csv(file)
-    for row in df_fact_checks.iterrows():
-        processed_fact_checks.add(row[1]["rec_id"])
-
-print("Already processed: len(processed_fact_checks)")
-
-fact_checks = {}
-
-for audio_file, transcript in transcripts.items():
-    if audio_file in processed_fact_checks:
-        logging.info(f"Skipping {audio_file}")
-        continue
-
-    extracted_facts = check_transcript(transcript)
+def fact_check_flow(transcript: str) -> Tuple[bool, str]:
+    """Transcript to `is_factually_correct` and `reasoning` (why it is factually correct or not)"""
+    extracted_facts = _extract_facts_from_transcript(transcript)
     try:
-        # print("extracted", extracted_facts)
-        best_matching_row = best_match(df, extracted_facts)
-        factually_correct = check_if_row_matches(transcript, best_matching_row)
-        fact_checks[audio_file] = factually_correct
-        logging.info(f"Finished {audio_file}")
-    except KeyError as e:
-        print("key error", e)
-        best_matching_row = None
-        logging.info(
-            f"Failed to process {audio_file} because of KeyError, setting is_factually_correct to False"
+        best_matching_row = _best_match(extracted_facts)
+        factually_correct_data = check_if_row_matches(transcript, best_matching_row)
+        return (
+            factually_correct_data["is_matching_person"],
+            factually_correct_data["reasoning"],
         )
-        fact_checks[audio_file] = {
-            "is_matching_person": "no",
-            "reasoning": "error: failed to process transcript",
-        }
-
-    # append the fact_check to a csv file after each iteration
-    with open(os.getenv("DATA_PATH") + "/fact_checks_v2.csv", "a") as file:
-        writer = csv.DictWriter(
-            file, fieldnames=["Audio File", "is_factually_correct", "reasoning"]
-        )
-
-        writer.writerow(
-            {
-                "Audio File": audio_file,
-                "is_factually_correct": fact_checks[audio_file]["is_matching_person"],
-                "reasoning": fact_checks[audio_file]["reasoning"],
-            }
+    except KeyError:
+        return (
+            "no",
+            "error: failed to process the transcript for fact checking",
         )

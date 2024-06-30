@@ -7,46 +7,12 @@ import time
 import json
 import asyncio
 
+from app.models.transcription import get_transcript
+from app.models.fact_checking import fact_check_flow
+
+# FIXME: isort, structlog, env vars for models, redis url, asyncio gather instead of two tasks
 
 redis_client = redis.Redis(host="redis", port=6379, db=0)
-
-# load the whisper model here
-import torch
-from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
-
-device = "cuda" if torch.cuda.is_available() else "cpu"
-torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
-
-model_id = "openai/whisper-tiny"
-
-whisper_model = AutoModelForSpeechSeq2Seq.from_pretrained(
-    model_id, torch_dtype=torch_dtype, low_cpu_mem_usage=True, use_safetensors=True
-)
-whisper_model.to(device)
-
-processor = AutoProcessor.from_pretrained(model_id)
-
-print("Models loaded")
-
-
-def _get_transcript(audio_tensor):
-
-    pipe = pipeline(
-        "automatic-speech-recognition",
-        model=whisper_model,
-        tokenizer=processor.tokenizer,
-        feature_extractor=processor.feature_extractor,
-        max_new_tokens=256,
-        chunk_length_s=30,
-        batch_size=16,
-        return_timestamps=True,
-        torch_dtype=torch_dtype,
-        device=device,
-    )
-
-    transcript = pipe(audio_tensor.numpy(), generate_kwargs={"language": "english"})
-    return transcript["text"].lstrip()
-
 
 def process_audio_is_factually_correct(audio_tensor) -> Tuple[str, str, False]:
     """
@@ -62,13 +28,12 @@ def process_audio_is_factually_correct(audio_tensor) -> Tuple[str, str, False]:
     Returns:
         Tuple[str, str, bool]: (transcript, reasoning, is_factually_correct)
     """
-    # FIXME: remove uggo try-except any to prevent api from waiting infinitely
+    # FIXME: remove uggo try-except to prevent api from waiting infinitely
     try:
-        transcript = _get_transcript(audio_tensor)
-
+        transcript = get_transcript(audio_tensor)
         # extract entities from the transcript via LLM call
-
-        return [transcript, "this is the reasoning", False]  # Return two booleans
+        is_factually_correct, reasoning = fact_check_flow(transcript)
+        return [transcript, reasoning, is_factually_correct]  # Return two booleans
     except Exception as e:
         # FIXME: structlog
         print(e)
