@@ -86,17 +86,18 @@ df["social_security_number"] = df["social_security_number"].str.replace(
     r"\D", "", regex=True
 )
 
-query = {
-    "name": "Mia Anderson",
-    "highest_previous_education": "Bachelor of Science in Computer Science",
-    "relationship_manager": "Ella Morrison",
-}
-
-
 def best_match(df, query):
     # get the row with the best matching name
+    # print(query)
+    # print(type(query))
+    # print(query.keys())
+
+    def kk(a, b):
+        print("kk a", a)
+        return fuzz.ratio(a["name"], b["name"])
 
     name_scores = df.apply(lambda row: fuzz.ratio(row["name"], query["name"]), axis=1)
+    # name_scores = df.apply(lambda row: kk(row, query), axis=1)
     best_name_match_row = df.iloc[name_scores.idxmax()]
 
     return best_name_match_row
@@ -134,13 +135,39 @@ import logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s:%(levelname)s:%(message)s")
 
 
+# load already processed fact_check IDs from fact_checks_v2.csv
+processed_fact_checks = set()
+with open(os.getenv("DATA_PATH") + "/fact_checks_v2.csv", "r") as file:
+    df_fact_checks = pd.read_csv(file)
+    for row in df_fact_checks.iterrows():
+        processed_fact_checks.add(row[1]["rec_id"])
+
+print("Already processed: len(processed_fact_checks)")
+
 fact_checks = {}
+
 for audio_file, transcript in transcripts.items():
+    if audio_file in processed_fact_checks:
+        logging.info(f"Skipping {audio_file}")
+        continue
+
     extracted_facts = check_transcript(transcript)
-    best_matching_row = best_match(df, extracted_facts)
-    factually_correct = check_if_row_matches(transcript, best_matching_row)
-    fact_checks[audio_file] = factually_correct
-    logging.info(f"Finished {audio_file}")
+    try:
+        # print("extracted", extracted_facts)
+        best_matching_row = best_match(df, extracted_facts)
+        factually_correct = check_if_row_matches(transcript, best_matching_row)
+        fact_checks[audio_file] = factually_correct
+        logging.info(f"Finished {audio_file}")
+    except KeyError as e:
+        print("key error", e)
+        best_matching_row = None
+        logging.info(
+            f"Failed to process {audio_file} because of KeyError, setting is_factually_correct to False"
+        )
+        fact_checks[audio_file] = {
+            "is_matching_person": "no",
+            "reasoning": "error: failed to process transcript",
+        }
 
     # append the fact_check to a csv file after each iteration
     with open(os.getenv("DATA_PATH") + "/fact_checks_v2.csv", "a") as file:
